@@ -4,9 +4,10 @@ import 'package:iub_app/UIview/academicResultView.dart';
 import 'package:iub_app/UIview/titleView.dart';
 import 'package:iub_app/AppTheme.dart';
 import 'package:iub_app/models/data.dart';
-import 'package:iub_app/myDiary/mealsListView.dart';
-import 'package:iub_app/myDiary/waterView.dart';
+import 'package:iub_app/myGrade/mealsListView.dart';
+import 'package:iub_app/myGrade/waterView.dart';
 import 'package:flutter/material.dart';
+import 'package:iub_app/UIview/resultChart.dart';
 
 class MyDiaryScreen extends StatefulWidget {
   final AnimationController animationController;
@@ -79,6 +80,16 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         animationController: widget.animationController,
       ),
     );
+    listViews.add(
+      ResultChart(
+        animation: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController,
+            curve:
+            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController,
+      ),
+    );
+
     listViews.add(
       TitleView(
         titleTxt: 'Meals today',

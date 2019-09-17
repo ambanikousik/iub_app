@@ -43,158 +43,11 @@ class AcademicResultView extends StatelessWidget {
                   children: <Widget>[
                     Padding(
                       padding:
-                          const EdgeInsets.only(top: 16, left: 16, right: 16),
+                          const EdgeInsets.all(10),
                       child: Row(
                         children: <Widget>[
-
-//                          Expanded(
-//                            child: Padding(
-//                              padding: const EdgeInsets.only(
-//                                   right: 8, top: 4),
-//                              child: Column(
-//                                children: <Widget>[
-//                                  Row(
-//                                    children: <Widget>[
-//                                      Container(
-//                                        height: 48,
-//                                        width: 2,
-//                                        decoration: BoxDecoration(
-//                                          color: HexColor('#87A0E5')
-//                                              .withOpacity(0.5),
-//                                          borderRadius: BorderRadius.all(
-//                                              Radius.circular(4.0)),
-//                                        ),
-//                                      ),
-//                                      Padding(
-//                                        padding: const EdgeInsets.all(8.0),
-//                                        child: Column(
-//                                          mainAxisAlignment:
-//                                              MainAxisAlignment.center,
-//                                          crossAxisAlignment:
-//                                              CrossAxisAlignment.start,
-//                                          children: <Widget>[
-//                                            Padding(
-//                                              padding: const EdgeInsets.only(
-//                                                  left: 4, bottom: 2),
-//                                              child: Text(
-//                                                'CGPA',
-//                                                textAlign: TextAlign.center,
-//                                                style: TextStyle(
-//                                                  fontFamily:
-//                                                      FintnessAppTheme.fontName,
-//                                                  fontWeight: FontWeight.w500,
-//                                                  fontSize: 18,
-//                                                  letterSpacing: -0.1,
-//                                                  color: FintnessAppTheme.grey
-//                                                      .withOpacity(0.5),
-//                                                ),
-//                                              ),
-//                                            ),
-//
-//                                                Padding(
-//                                                  padding:
-//                                                      const EdgeInsets.only(
-//                                                          left:8, bottom: 3),
-//                                                  child: Text(
-//                                                    '${(cgpa * animation.value)}',
-//                                                    textAlign: TextAlign.center,
-//                                                    style: TextStyle(
-//                                                      fontFamily:
-//                                                          FintnessAppTheme
-//                                                              .fontName,
-//                                                      fontWeight:
-//                                                          FontWeight.w600,
-//                                                      fontSize: 30,
-//                                                      color: FintnessAppTheme
-//                                                          .darkerText,
-//                                                    ),
-//                                                  ),
-//                                            )
-//                                          ],
-//                                        ),
-//                                      )
-//                                    ],
-//                                  ),
-//                                  SizedBox(
-//                                    height: 8,
-//                                  ),
-//                                  Row(
-//                                    children: <Widget>[
-//                                      Container(
-//                                        height: 48,
-//                                        width: 2,
-//                                        decoration: BoxDecoration(
-//                                          color: HexColor('#F56E98')
-//                                              .withOpacity(0.5),
-//                                          borderRadius: BorderRadius.all(
-//                                              Radius.circular(4.0)),
-//                                        ),
-//                                      ),
-//                                      Padding(
-//                                        padding: const EdgeInsets.all(8.0),
-//                                        child: Column(
-//                                          mainAxisAlignment:
-//                                              MainAxisAlignment.center,
-//                                          crossAxisAlignment:
-//                                              CrossAxisAlignment.start,
-//                                          children: <Widget>[
-//                                            Padding(
-//                                              padding: const EdgeInsets.only(
-//                                                  left: 4, bottom: 2),
-//                                              child: Text(
-//                                                'Semester',
-//                                                textAlign: TextAlign.center,
-//                                                style: TextStyle(
-//                                                  fontFamily:
-//                                                      FintnessAppTheme.fontName,
-//                                                  fontWeight: FontWeight.w500,
-//                                                  fontSize: 18,
-//                                                  letterSpacing: -0.1,
-//                                                  color: FintnessAppTheme.grey
-//                                                      .withOpacity(0.5),
-//                                                ),
-//                                              ),
-//                                            ),
-//                                            Row(
-//                                              mainAxisAlignment:
-//                                                  MainAxisAlignment.center,
-//                                              crossAxisAlignment:
-//                                                  CrossAxisAlignment.end,
-//                                              children: <Widget>[
-//
-//                                                Padding(
-//                                                  padding:
-//                                                      const EdgeInsets.only(
-//                                                          left: 10, bottom: 3),
-//                                                  child: Text(
-//                                                    '${(semester * animation.value).toInt()}',
-//                                                    textAlign: TextAlign.center,
-//                                                    style: TextStyle(
-//                                                      fontFamily:
-//                                                          FintnessAppTheme
-//                                                              .fontName,
-//                                                      fontWeight:
-//                                                          FontWeight.w600,
-//                                                      fontSize: 30,
-//                                                      color: FintnessAppTheme
-//                                                          .darkerText,
-//                                                    ),
-//                                                  ),
-//                                                ),
-//
-//                                              ],
-//                                            )
-//                                          ],
-//                                        ),
-//                                      )
-//                                    ],
-//                                  )
-//                                ],
-//                              ),
-//                            ),
-//                          ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 16),
+                            padding: const EdgeInsets.only(right:10),
                             child: Center(
                               child: Stack(
                                 overflow: Overflow.visible,
@@ -202,12 +55,12 @@ class AcademicResultView extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      width: 110,
-                                      height: 110,
+                                      width: 100,
+                                      height: 100,
                                       decoration: BoxDecoration(
                                         color: FintnessAppTheme.white,
                                         borderRadius: BorderRadius.all(
-                                          Radius.circular(110.0),
+                                          Radius.circular(100.0),
                                         ),
                                         border: new Border.all(
                                             width: 5,
@@ -222,7 +75,7 @@ class AcademicResultView extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            '${(cgpa * animation.value)}',
+                                            '${num.parse((cgpa * animation.value).toStringAsFixed(2))}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:
@@ -263,8 +116,8 @@ class AcademicResultView extends StatelessWidget {
                                               (360 - (cgpa*90)) *
                                                   (1.0 - animation.value)),
                                       child: SizedBox(
-                                        width: 118,
-                                        height: 118,
+                                        width: 108,
+                                        height: 108,
                                       ),
                                     ),
                                   )
@@ -272,9 +125,60 @@ class AcademicResultView extends StatelessWidget {
                               ),
                             ),
                           ),
-                         // SizedBox(width: 30,),
+                         Container(
+                           width: 60,
+                           height: 100,
+                           //alignment: Alignment.center,
+                           decoration: BoxDecoration(
+                             boxShadow: <BoxShadow>[
+                               BoxShadow(
+                                   color: HexColor(FintnessAppTheme.semester_end)
+                                       .withOpacity(0.6),
+                                   offset: Offset(1.1, 4.0),
+                                   blurRadius: 8.0),
+                             ],
+                             gradient: LinearGradient(
+                               colors: [
+                                 HexColor(FintnessAppTheme.semester_start),
+                                 HexColor(FintnessAppTheme.semester_end),
+                               ],
+                               begin: Alignment.topLeft,
+                               end: Alignment.bottomRight,
+                             ),
+                             borderRadius: BorderRadius.all(
+                               Radius.circular(15)
+                             ),
+                           ),
+                           child: Column(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: <Widget>[
+                           Text('$semester',style: TextStyle(
+                             fontFamily:
+                             FintnessAppTheme.fontName,
+                             fontWeight: FontWeight.w100,
+                             fontSize:40,
+                             letterSpacing: 0.0,
+                             color: FintnessAppTheme
+                                 .white,
+                           ),
+                           ),
+                               SizedBox(height: 5,),
+                               Text('semester',style: TextStyle(
+                                 fontFamily:
+                                 FintnessAppTheme.fontName,
+                                 fontWeight: FontWeight.w100,
+                                 fontSize:13,
+                                 letterSpacing: 0.0,
+                                 color: FintnessAppTheme
+                                     .white,
+                               ),
+                               ),
+                             ],
+                             ),
+
+                         ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 16),
+                            padding: const EdgeInsets.only(left: 10),
                             child: Center(
                               child: Stack(
                                 overflow: Overflow.visible,
@@ -282,12 +186,12 @@ class AcademicResultView extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      width: 110,
-                                      height: 110,
+                                      width: 100,
+                                      height: 100,
                                       decoration: BoxDecoration(
                                         color: FintnessAppTheme.white,
                                         borderRadius: BorderRadius.all(
-                                          Radius.circular(110.0),
+                                          Radius.circular(100.0),
                                         ),
                                         border: new Border.all(
                                             width: 4,
@@ -343,8 +247,8 @@ class AcademicResultView extends StatelessWidget {
                                               (360 - (credits*360/totalCredits)) *
                                                   (1.0 - animation.value)),
                                       child: SizedBox(
-                                        width: 118,
-                                        height: 118,
+                                        width: 108,
+                                        height: 108,
                                       ),
                                     ),
                                   )
@@ -355,231 +259,8 @@ class AcademicResultView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 24, right: 24, top: 8, bottom: 8),
-                      child: Container(
-                        height: 2,
-                        decoration: BoxDecoration(
-                          color: FintnessAppTheme.background,
-                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 24, right: 24, top: 8, bottom: 16),
-                      child: Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  'Carbs',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: FintnessAppTheme.fontName,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                    letterSpacing: -0.2,
-                                    color: FintnessAppTheme.darkText,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 4),
-                                  child: Container(
-                                    height: 4,
-                                    width: 70,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          HexColor('#87A0E5').withOpacity(0.2),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(4.0)),
-                                    ),
-                                    child: Row(
-                                      children: <Widget>[
-                                        Container(
-                                          width: ((70 / 1.2) * animation.value),
-                                          height: 4,
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(colors: [
-                                              HexColor('#87A0E5'),
-                                              HexColor('#87A0E5')
-                                                  .withOpacity(0.5),
-                                            ]),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(4.0)),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 6),
-                                  child: Text(
-                                    '12g left',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: FintnessAppTheme.fontName,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 12,
-                                      color: FintnessAppTheme.grey
-                                          .withOpacity(0.5),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Protein',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: FintnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16,
-                                        letterSpacing: -0.2,
-                                        color: FintnessAppTheme.darkText,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 4),
-                                      child: Container(
-                                        height: 4,
-                                        width: 70,
-                                        decoration: BoxDecoration(
-                                          color: HexColor('#F56E98')
-                                              .withOpacity(0.2),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(4.0)),
-                                        ),
-                                        child: Row(
-                                          children: <Widget>[
-                                            Container(
-                                              width: ((70 / 2) *
-                                                  animationController.value),
-                                              height: 4,
-                                              decoration: BoxDecoration(
-                                                gradient:
-                                                    LinearGradient(colors: [
-                                                  HexColor('#F56E98')
-                                                      .withOpacity(0.1),
-                                                  HexColor('#F56E98'),
-                                                ]),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(4.0)),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 6),
-                                      child: Text(
-                                        '30g left',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: FintnessAppTheme.fontName,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 12,
-                                          color: FintnessAppTheme.grey
-                                              .withOpacity(0.5),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Fat',
-                                      style: TextStyle(
-                                        fontFamily: FintnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16,
-                                        letterSpacing: -0.2,
-                                        color: FintnessAppTheme.darkText,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          right: 0, top: 4),
-                                      child: Container(
-                                        height: 4,
-                                        width: 70,
-                                        decoration: BoxDecoration(
-                                          color: HexColor('#F1B440')
-                                              .withOpacity(0.2),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(4.0)),
-                                        ),
-                                        child: Row(
-                                          children: <Widget>[
-                                            Container(
-                                              width: ((70 / 2.5) *
-                                                  animationController.value),
-                                              height: 4,
-                                              decoration: BoxDecoration(
-                                                gradient:
-                                                    LinearGradient(colors: [
-                                                  HexColor('#F1B440')
-                                                      .withOpacity(0.1),
-                                                  HexColor('#F1B440'),
-                                                ]),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(4.0)),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 6),
-                                      child: Text(
-                                        '10g left',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: FintnessAppTheme.fontName,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 12,
-                                          color: FintnessAppTheme.grey
-                                              .withOpacity(0.5),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )
                   ],
+
                 ),
               ),
             ),

@@ -3,7 +3,7 @@ import 'package:iub_app/traning/trainingScreen.dart';
 import 'package:flutter/material.dart';
 import 'bottomNavigationView/bottomBarView.dart';
 import 'AppTheme.dart';
-import 'myDiary/myDiaryScreen.dart';
+import 'myGrade/landingPage.dart';
 
 class FitnessAppHomeScreen extends StatefulWidget {
   @override
