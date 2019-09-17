@@ -12,6 +12,11 @@ class FintnessAppTheme {
   static const Color grey = Color(0xFF3A5160);
   static const Color dark_grey = Color(0xFF313A44);
 
+  static const  cgpa_start = "#6F72CA";
+  static const  cgpa_end = "#1E1466";
+  static const  credit_start = "#FE95B6";
+  static const  credit_end = "#FA7D82";
+
   static const Color darkText = Color(0xFF253840);
   static const Color darkerText = Color(0xFF17262A);
   static const Color lightText = Color(0xFF4A6572);

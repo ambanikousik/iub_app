@@ -1,7 +1,6 @@
 import 'package:iub_app/AppTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:iub_app/models/data.dart';
-import 'package:iub_app/UIview/waveView.dart';
 import 'dart:math' as math;
 
 class AcademicResultView extends StatelessWidget {
@@ -47,29 +46,7 @@ class AcademicResultView extends StatelessWidget {
                           const EdgeInsets.only(top: 16, left: 16, right: 16),
                       child: Row(
                         children: <Widget>[
-                          Padding(
-                            padding:
-                            const EdgeInsets.only(left: 16, right: 8, top: 16),
-                            child: Container(
-                              width: 60,
-                              height: 160,
-                              decoration: BoxDecoration(
-                                color: HexColor("#E8EDFE"),
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(80.0),
-                                    bottomLeft: Radius.circular(80.0),
-                                    bottomRight: Radius.circular(80.0),
-                                    topRight: Radius.circular(80.0)),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                      color: FintnessAppTheme.grey.withOpacity(0.4),
-                                      offset: Offset(2, 2),
-                                      blurRadius: 4),
-                                ],
-                              ),
-                              child: WaveView(),
-                            ),
-                          ),
+
 //                          Expanded(
 //                            child: Padding(
 //                              padding: const EdgeInsets.only(
@@ -225,12 +202,92 @@ class AcademicResultView extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Container(
-                                      width: 100,
-                                      height: 100,
+                                      width: 110,
+                                      height: 110,
                                       decoration: BoxDecoration(
                                         color: FintnessAppTheme.white,
                                         borderRadius: BorderRadius.all(
-                                          Radius.circular(100.0),
+                                          Radius.circular(110.0),
+                                        ),
+                                        border: new Border.all(
+                                            width: 5,
+                                            color: FintnessAppTheme
+                                                .nearlyDarkBlue
+                                                .withOpacity(0.2)),
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Text(
+                                            '${(cgpa * animation.value)}',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily:
+                                              FintnessAppTheme.fontName,
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 24,
+                                              letterSpacing: 0.0,
+                                              color: FintnessAppTheme
+                                                  .nearlyDarkBlue,
+                                            ),
+                                          ),
+                                          Text(
+                                            'CGPA',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily:
+                                              FintnessAppTheme.fontName,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 12,
+                                              letterSpacing: 0.0,
+                                              color: FintnessAppTheme.grey
+                                                  .withOpacity(0.5),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: CustomPaint(
+                                      painter: CurvePainter(
+                                          colors: [
+                                            HexColor(FintnessAppTheme.cgpa_start),
+                                            HexColor(FintnessAppTheme.cgpa_end),
+                                          ],
+                                          angle: (cgpa*90) +
+                                              (360 - (cgpa*90)) *
+                                                  (1.0 - animation.value)),
+                                      child: SizedBox(
+                                        width: 118,
+                                        height: 118,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                         // SizedBox(width: 30,),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Center(
+                              child: Stack(
+                                overflow: Overflow.visible,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 110,
+                                      height: 110,
+                                      decoration: BoxDecoration(
+                                        color: FintnessAppTheme.white,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(110.0),
                                         ),
                                         border: new Border.all(
                                             width: 4,
@@ -245,7 +302,7 @@ class AcademicResultView extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            '${(credits * animation.value).toInt()}',
+                                            '${(credits  * animation.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:
@@ -279,16 +336,15 @@ class AcademicResultView extends StatelessWidget {
                                     child: CustomPaint(
                                       painter: CurvePainter(
                                           colors: [
-                                            FintnessAppTheme.nearlyDarkBlue,
-                                            HexColor("#8A98E8"),
-                                            HexColor("#8A98E8")
+                                            HexColor(FintnessAppTheme.credit_start),
+                                            HexColor(FintnessAppTheme.credit_end),
                                           ],
-                                          angle: credits +
-                                              (360 - credits) *
+                                          angle: (credits*360/totalCredits) +
+                                              (360 - (credits*360/totalCredits)) *
                                                   (1.0 - animation.value)),
                                       child: SizedBox(
-                                        width: 108,
-                                        height: 108,
+                                        width: 118,
+                                        height: 118,
                                       ),
                                     ),
                                   )
