@@ -4,7 +4,7 @@ import 'package:iub_app/UIview/titleView.dart';
 import 'package:iub_app/UIview/workoutView.dart';
 import 'package:flutter/material.dart';
 
-import '../fintnessAppTheme.dart';
+import '../AppTheme.dart';
 
 
 class TrainingScreen extends StatefulWidget {

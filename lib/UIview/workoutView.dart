@@ -1,6 +1,6 @@
 import 'package:iub_app/main.dart';
 import 'package:flutter/material.dart';
-import '../fintnessAppTheme.dart';
+import '../AppTheme.dart';
 
 class WorkoutView extends StatelessWidget {
   final AnimationController animationController;

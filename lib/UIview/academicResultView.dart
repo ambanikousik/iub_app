@@ -1,12 +1,14 @@
-import 'package:iub_app/fintnessAppTheme.dart';
+import 'package:iub_app/AppTheme.dart';
 import 'package:flutter/material.dart';
+import 'package:iub_app/models/data.dart';
+import 'package:iub_app/UIview/waveView.dart';
 import 'dart:math' as math;
 
-class MediterranesnDietView extends StatelessWidget {
+class AcademicResultView extends StatelessWidget {
   final AnimationController animationController;
   final Animation animation;
-
-  const MediterranesnDietView(
+  //final credits = 30;
+  const AcademicResultView(
       {Key key, this.animationController, this.animation})
       : super(key: key);
 
@@ -45,211 +47,175 @@ class MediterranesnDietView extends StatelessWidget {
                           const EdgeInsets.only(top: 16, left: 16, right: 16),
                       child: Row(
                         children: <Widget>[
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 8, right: 8, top: 4),
-                              child: Column(
-                                children: <Widget>[
-                                  Row(
-                                    children: <Widget>[
-                                      Container(
-                                        height: 48,
-                                        width: 2,
-                                        decoration: BoxDecoration(
-                                          color: HexColor('#87A0E5')
-                                              .withOpacity(0.5),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(4.0)),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 4, bottom: 2),
-                                              child: Text(
-                                                'Eaten',
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  fontFamily:
-                                                      FintnessAppTheme.fontName,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 16,
-                                                  letterSpacing: -0.1,
-                                                  color: FintnessAppTheme.grey
-                                                      .withOpacity(0.5),
-                                                ),
-                                              ),
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              children: <Widget>[
-                                                SizedBox(
-                                                  width: 28,
-                                                  height: 28,
-                                                  child: Image.asset(
-                                                      "assets/fitness_app/eaten.png"),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 4, bottom: 3),
-                                                  child: Text(
-                                                    '${(1127 * animation.value).toInt()}',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontFamily:
-                                                          FintnessAppTheme
-                                                              .fontName,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 16,
-                                                      color: FintnessAppTheme
-                                                          .darkerText,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 4, bottom: 3),
-                                                  child: Text(
-                                                    'Kcal',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontFamily:
-                                                          FintnessAppTheme
-                                                              .fontName,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 12,
-                                                      letterSpacing: -0.2,
-                                                      color: FintnessAppTheme
-                                                          .grey
-                                                          .withOpacity(0.5),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Container(
-                                        height: 48,
-                                        width: 2,
-                                        decoration: BoxDecoration(
-                                          color: HexColor('#F56E98')
-                                              .withOpacity(0.5),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(4.0)),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 4, bottom: 2),
-                                              child: Text(
-                                                'Burned',
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  fontFamily:
-                                                      FintnessAppTheme.fontName,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 16,
-                                                  letterSpacing: -0.1,
-                                                  color: FintnessAppTheme.grey
-                                                      .withOpacity(0.5),
-                                                ),
-                                              ),
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              children: <Widget>[
-                                                SizedBox(
-                                                  width: 28,
-                                                  height: 28,
-                                                  child: Image.asset(
-                                                      "assets/fitness_app/burned.png"),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 4, bottom: 3),
-                                                  child: Text(
-                                                    '${(102 * animation.value).toInt()}',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontFamily:
-                                                          FintnessAppTheme
-                                                              .fontName,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 16,
-                                                      color: FintnessAppTheme
-                                                          .darkerText,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8, bottom: 3),
-                                                  child: Text(
-                                                    'Kcal',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      fontFamily:
-                                                          FintnessAppTheme
-                                                              .fontName,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 12,
-                                                      letterSpacing: -0.2,
-                                                      color: FintnessAppTheme
-                                                          .grey
-                                                          .withOpacity(0.5),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  )
+                          Padding(
+                            padding:
+                            const EdgeInsets.only(left: 16, right: 8, top: 16),
+                            child: Container(
+                              width: 60,
+                              height: 160,
+                              decoration: BoxDecoration(
+                                color: HexColor("#E8EDFE"),
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(80.0),
+                                    bottomLeft: Radius.circular(80.0),
+                                    bottomRight: Radius.circular(80.0),
+                                    topRight: Radius.circular(80.0)),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                      color: FintnessAppTheme.grey.withOpacity(0.4),
+                                      offset: Offset(2, 2),
+                                      blurRadius: 4),
                                 ],
                               ),
+                              child: WaveView(),
                             ),
                           ),
+//                          Expanded(
+//                            child: Padding(
+//                              padding: const EdgeInsets.only(
+//                                   right: 8, top: 4),
+//                              child: Column(
+//                                children: <Widget>[
+//                                  Row(
+//                                    children: <Widget>[
+//                                      Container(
+//                                        height: 48,
+//                                        width: 2,
+//                                        decoration: BoxDecoration(
+//                                          color: HexColor('#87A0E5')
+//                                              .withOpacity(0.5),
+//                                          borderRadius: BorderRadius.all(
+//                                              Radius.circular(4.0)),
+//                                        ),
+//                                      ),
+//                                      Padding(
+//                                        padding: const EdgeInsets.all(8.0),
+//                                        child: Column(
+//                                          mainAxisAlignment:
+//                                              MainAxisAlignment.center,
+//                                          crossAxisAlignment:
+//                                              CrossAxisAlignment.start,
+//                                          children: <Widget>[
+//                                            Padding(
+//                                              padding: const EdgeInsets.only(
+//                                                  left: 4, bottom: 2),
+//                                              child: Text(
+//                                                'CGPA',
+//                                                textAlign: TextAlign.center,
+//                                                style: TextStyle(
+//                                                  fontFamily:
+//                                                      FintnessAppTheme.fontName,
+//                                                  fontWeight: FontWeight.w500,
+//                                                  fontSize: 18,
+//                                                  letterSpacing: -0.1,
+//                                                  color: FintnessAppTheme.grey
+//                                                      .withOpacity(0.5),
+//                                                ),
+//                                              ),
+//                                            ),
+//
+//                                                Padding(
+//                                                  padding:
+//                                                      const EdgeInsets.only(
+//                                                          left:8, bottom: 3),
+//                                                  child: Text(
+//                                                    '${(cgpa * animation.value)}',
+//                                                    textAlign: TextAlign.center,
+//                                                    style: TextStyle(
+//                                                      fontFamily:
+//                                                          FintnessAppTheme
+//                                                              .fontName,
+//                                                      fontWeight:
+//                                                          FontWeight.w600,
+//                                                      fontSize: 30,
+//                                                      color: FintnessAppTheme
+//                                                          .darkerText,
+//                                                    ),
+//                                                  ),
+//                                            )
+//                                          ],
+//                                        ),
+//                                      )
+//                                    ],
+//                                  ),
+//                                  SizedBox(
+//                                    height: 8,
+//                                  ),
+//                                  Row(
+//                                    children: <Widget>[
+//                                      Container(
+//                                        height: 48,
+//                                        width: 2,
+//                                        decoration: BoxDecoration(
+//                                          color: HexColor('#F56E98')
+//                                              .withOpacity(0.5),
+//                                          borderRadius: BorderRadius.all(
+//                                              Radius.circular(4.0)),
+//                                        ),
+//                                      ),
+//                                      Padding(
+//                                        padding: const EdgeInsets.all(8.0),
+//                                        child: Column(
+//                                          mainAxisAlignment:
+//                                              MainAxisAlignment.center,
+//                                          crossAxisAlignment:
+//                                              CrossAxisAlignment.start,
+//                                          children: <Widget>[
+//                                            Padding(
+//                                              padding: const EdgeInsets.only(
+//                                                  left: 4, bottom: 2),
+//                                              child: Text(
+//                                                'Semester',
+//                                                textAlign: TextAlign.center,
+//                                                style: TextStyle(
+//                                                  fontFamily:
+//                                                      FintnessAppTheme.fontName,
+//                                                  fontWeight: FontWeight.w500,
+//                                                  fontSize: 18,
+//                                                  letterSpacing: -0.1,
+//                                                  color: FintnessAppTheme.grey
+//                                                      .withOpacity(0.5),
+//                                                ),
+//                                              ),
+//                                            ),
+//                                            Row(
+//                                              mainAxisAlignment:
+//                                                  MainAxisAlignment.center,
+//                                              crossAxisAlignment:
+//                                                  CrossAxisAlignment.end,
+//                                              children: <Widget>[
+//
+//                                                Padding(
+//                                                  padding:
+//                                                      const EdgeInsets.only(
+//                                                          left: 10, bottom: 3),
+//                                                  child: Text(
+//                                                    '${(semester * animation.value).toInt()}',
+//                                                    textAlign: TextAlign.center,
+//                                                    style: TextStyle(
+//                                                      fontFamily:
+//                                                          FintnessAppTheme
+//                                                              .fontName,
+//                                                      fontWeight:
+//                                                          FontWeight.w600,
+//                                                      fontSize: 30,
+//                                                      color: FintnessAppTheme
+//                                                          .darkerText,
+//                                                    ),
+//                                                  ),
+//                                                ),
+//
+//                                              ],
+//                                            )
+//                                          ],
+//                                        ),
+//                                      )
+//                                    ],
+//                                  )
+//                                ],
+//                              ),
+//                            ),
+//                          ),
                           Padding(
                             padding: const EdgeInsets.only(right: 16),
                             child: Center(
@@ -279,7 +245,7 @@ class MediterranesnDietView extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            '${(1503 * animation.value).toInt()}',
+                                            '${(credits * animation.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:
@@ -292,7 +258,7 @@ class MediterranesnDietView extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            'Kcal left',
+                                            'Credits',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:
@@ -317,8 +283,8 @@ class MediterranesnDietView extends StatelessWidget {
                                             HexColor("#8A98E8"),
                                             HexColor("#8A98E8")
                                           ],
-                                          angle: 140 +
-                                              (360 - 140) *
+                                          angle: credits +
+                                              (360 - credits) *
                                                   (1.0 - animation.value)),
                                       child: SizedBox(
                                         width: 108,

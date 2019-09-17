@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'fitnessAppHomeScreen.dart';
+import 'HomeScreen.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,7 +1,8 @@
-import 'package:iub_app/fintnessAppTheme.dart';
+import 'package:iub_app/AppTheme.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:vector_math/vector_math.dart' as vector;
+import 'package:iub_app/models/data.dart';
 
 class WaveView extends StatefulWidget {
   @override
@@ -11,11 +12,12 @@ class WaveView extends StatefulWidget {
 class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
   AnimationController animationController;
   AnimationController waveAnimationController;
-  Size bottlesize1 = Size(60, 160);
+ // Size bottlesize1 = Size(60, 160);
+  var bottle = 160 - (cgpa*160)/4;
   Offset bottleOffset1 = Offset(0, 0);
   List<Offset> animList1 = [];
 
-  Size bottlesize2 = Size(60, 160);
+  //Size bottlesize2 = Size(60, 160);
   Offset bottleOffset2 = Offset(60, 0);
   List<Offset> animList2 = [];
   @override
@@ -34,24 +36,24 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
       });
     waveAnimationController.addListener(() {
       animList1.clear();
-      for (int i = -2 - bottleOffset1.dx.toInt(); i <= 60 + 2; i++) {
+      for (int i = -2 - bottleOffset1.dx.toInt(); i <= bottle + 2; i++) {
         animList1.add(new Offset(
             i.toDouble() + bottleOffset1.dx.toInt(),
             math.sin((waveAnimationController.value * 360 - i) %
                         360 *
                         vector.degrees2Radians) *
                     4 +
-                60));
+                bottle));
       }
       animList2.clear();
-      for (int i = -2 - bottleOffset2.dx.toInt(); i <= 60 + 2; i++) {
+      for (int i = -2 - bottleOffset2.dx.toInt(); i <= bottle + 2; i++) {
         animList2.add(new Offset(
             i.toDouble() + bottleOffset2.dx.toInt(),
             math.sin((waveAnimationController.value * 360 - i) %
                         360 *
                         vector.degrees2Radians) *
                     4 +
-                60));
+                bottle));
       }
     });
     waveAnimationController.repeat();
@@ -88,6 +90,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
                           bottomLeft: Radius.circular(80.0),
                           bottomRight: Radius.circular(80.0),
                           topRight: Radius.circular(80.0)),
+
                       gradient: LinearGradient(
                         colors: [
                           FintnessAppTheme.nearlyDarkBlue.withOpacity(0.2),
@@ -130,12 +133,12 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
             Padding(
               padding: const EdgeInsets.only(top: 48),
               child: Center(
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      '60',
+                      '$cgpa',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: FintnessAppTheme.fontName,
@@ -148,7 +151,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
                     Padding(
                       padding: const EdgeInsets.only(top: 3.0),
                       child: Text(
-                        '%',
+                        'CGPA',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: FintnessAppTheme.fontName,
@@ -156,6 +159,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
                           fontSize: 14,
                           letterSpacing: 0.0,
                           color: FintnessAppTheme.white,
+
                         ),
                       ),
                     ),
@@ -231,7 +235,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
                   width: 4,
                   height: 4,
                   decoration: BoxDecoration(
-                    color: FintnessAppTheme.white.withOpacity(
+                    color: FintnessAppTheme.nearlyBlack.withOpacity(
                         animationController.status == AnimationStatus.reverse
                             ? 0.0
                             : 0.4),

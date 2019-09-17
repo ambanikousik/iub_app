@@ -1,8 +1,9 @@
 import 'package:iub_app/UIview/bodyMeasurement.dart';
 import 'package:iub_app/UIview/glassView.dart';
-import 'package:iub_app/UIview/mediterranesnDietView.dart';
+import 'package:iub_app/UIview/academicResultView.dart';
 import 'package:iub_app/UIview/titleView.dart';
-import 'package:iub_app/fintnessAppTheme.dart';
+import 'package:iub_app/AppTheme.dart';
+import 'package:iub_app/models/data.dart';
 import 'package:iub_app/myDiary/mealsListView.dart';
 import 'package:iub_app/myDiary/waterView.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     listViews.add(
       TitleView(
-        titleTxt: 'Mediterranean diet',
+        titleTxt: '$username',
         subTxt: 'Details',
         animation: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
@@ -70,7 +71,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       ),
     );
     listViews.add(
-      MediterranesnDietView(
+      AcademicResultView(
         animation: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
             curve:
@@ -247,19 +248,35 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  "My Diary",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontFamily: FintnessAppTheme.fontName,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 22 + 6 - 6 * topBarOpacity,
-                                    letterSpacing: 1.2,
-                                    color: FintnessAppTheme.darkerText,
+                                child: RichText(
+                                  text: TextSpan(
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                          text: 'IUB',
+                                          style: TextStyle(
+                                            fontFamily: FintnessAppTheme.fontName,
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 22 + 6 - 6 * topBarOpacity,
+                                            letterSpacing: 1.2,
+                                            color: FintnessAppTheme.darkerText,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: 'ian',
+                                          style: TextStyle(
+                                            fontFamily: FintnessAppTheme.fontName,
+                                            fontWeight: FontWeight.w100,
+                                            fontSize: 18 + 6 - 6 * topBarOpacity,
+                                            letterSpacing: 1.2,
+                                            color: FintnessAppTheme.darkerText,
+                                          ),
+                                        )
+                                      ]
                                   ),
                                 ),
                               ),
                             ),
+
                             SizedBox(
                               height: 38,
                               width: 38,

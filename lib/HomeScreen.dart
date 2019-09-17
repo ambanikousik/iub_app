@@ -2,7 +2,7 @@ import 'package:iub_app/models/tabIconData.dart';
 import 'package:iub_app/traning/trainingScreen.dart';
 import 'package:flutter/material.dart';
 import 'bottomNavigationView/bottomBarView.dart';
-import 'fintnessAppTheme.dart';
+import 'AppTheme.dart';
 import 'myDiary/myDiaryScreen.dart';
 
 class FitnessAppHomeScreen extends StatefulWidget {

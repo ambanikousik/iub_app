@@ -1,5 +1,5 @@
 import 'package:iub_app/UIview/waveView.dart';
-import 'package:iub_app/fintnessAppTheme.dart';
+import 'package:iub_app/AppTheme.dart';
 import 'package:flutter/material.dart';
 
 class WaterView extends StatefulWidget {
@@ -256,29 +256,29 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsets.only(left: 16, right: 8, top: 16),
-                        child: Container(
-                          width: 60,
-                          height: 160,
-                          decoration: BoxDecoration(
-                            color: HexColor("#E8EDFE"),
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(80.0),
-                                bottomLeft: Radius.circular(80.0),
-                                bottomRight: Radius.circular(80.0),
-                                topRight: Radius.circular(80.0)),
-                            boxShadow: <BoxShadow>[
-                              BoxShadow(
-                                  color: FintnessAppTheme.grey.withOpacity(0.4),
-                                  offset: Offset(2, 2),
-                                  blurRadius: 4),
-                            ],
-                          ),
-                          child: WaveView(),
-                        ),
-                      )
+//                      Padding(
+//                        padding:
+//                            const EdgeInsets.only(left: 16, right: 8, top: 16),
+//                        child: Container(
+//                          width: 60,
+//                          height: 160,
+//                          decoration: BoxDecoration(
+//                            color: HexColor("#E8EDFE"),
+//                            borderRadius: BorderRadius.only(
+//                                topLeft: Radius.circular(80.0),
+//                                bottomLeft: Radius.circular(80.0),
+//                                bottomRight: Radius.circular(80.0),
+//                                topRight: Radius.circular(80.0)),
+//                            boxShadow: <BoxShadow>[
+//                              BoxShadow(
+//                                  color: FintnessAppTheme.grey.withOpacity(0.4),
+//                                  offset: Offset(2, 2),
+//                                  blurRadius: 4),
+//                            ],
+//                          ),
+//                          child: WaveView(),
+//                        ),
+//                      )
                     ],
                   ),
                 ),

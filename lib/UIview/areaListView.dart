@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../fintnessAppTheme.dart';
+import '../AppTheme.dart';
 
 class AreaListView extends StatefulWidget {
   final AnimationController mainScreenAnimationController;

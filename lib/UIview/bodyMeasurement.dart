@@ -1,4 +1,4 @@
-import 'package:iub_app/fintnessAppTheme.dart';
+import 'package:iub_app/AppTheme.dart';
 import 'package:flutter/material.dart';
 
 class BodyMeasurementView extends StatelessWidget {
