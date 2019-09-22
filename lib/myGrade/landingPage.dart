@@ -8,16 +8,17 @@ import 'package:iub_app/myGrade/mealsListView.dart';
 import 'package:iub_app/myGrade/waterView.dart';
 import 'package:flutter/material.dart';
 import 'package:iub_app/UIview/resultChart.dart';
+import 'package:iub_app/UIview/areaListView.dart';
 
-class MyDiaryScreen extends StatefulWidget {
+class LandingScreen extends StatefulWidget {
   final AnimationController animationController;
 
-  const MyDiaryScreen({Key key, this.animationController}) : super(key: key);
+  const LandingScreen({Key key, this.animationController}) : super(key: key);
   @override
-  _MyDiaryScreenState createState() => _MyDiaryScreenState();
+  _LandingScreenState createState() => _LandingScreenState();
 }
 
-class _MyDiaryScreenState extends State<MyDiaryScreen>
+class _LandingScreenState extends State<LandingScreen>
     with TickerProviderStateMixin {
   Animation<double> topBarAnimation;
 
@@ -82,7 +83,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     );
     listViews.add(
       TitleView(
-        titleTxt: 'Your Semester wise grades',
+        titleTxt: 'Grades Chart',
         subTxt: 'Details',
         animation: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
@@ -119,6 +120,29 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
             CurvedAnimation(
                 parent: widget.animationController,
                 curve: Interval((1 / count) * 3, 1.0,
+                    curve: Curves.fastOutSlowIn))),
+        mainScreenAnimationController: widget.animationController,
+      ),
+    );
+
+    listViews.add(
+      TitleView(
+        titleTxt: 'Area of focus',
+        subTxt: 'more',
+        animation: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController,
+            curve:
+            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController,
+      ),
+    );
+
+    listViews.add(
+      AreaListView(
+        mainScreenAnimation: Tween(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+                parent: widget.animationController,
+                curve: Interval((1 / count) * 5, 1.0,
                     curve: Curves.fastOutSlowIn))),
         mainScreenAnimationController: widget.animationController,
       ),
@@ -241,7 +265,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                     0.0, 30 * (1.0 - topBarAnimation.value), 0.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: FintnessAppTheme.white.withOpacity(topBarOpacity),
+                    color: FintnessAppTheme.lightText.withOpacity(topBarOpacity),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(32.0),
                     ),
@@ -280,7 +304,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                             fontWeight: FontWeight.w700,
                                             fontSize: 22 + 6 - 6 * topBarOpacity,
                                             letterSpacing: 1.2,
-                                            color: FintnessAppTheme.darkerText,
+                                            color: FintnessAppTheme.spacer,
                                           ),
                                         ),
                                         TextSpan(
@@ -290,7 +314,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                             fontWeight: FontWeight.w100,
                                             fontSize: 18 + 6 - 6 * topBarOpacity,
                                             letterSpacing: 1.2,
-                                            color: FintnessAppTheme.darkerText,
+                                            color: FintnessAppTheme.spacer,
                                           ),
                                         )
                                       ]
@@ -310,15 +334,15 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                 child: Center(
                                   child: Icon(
                                     Icons.keyboard_arrow_left,
-                                    color: FintnessAppTheme.grey,
+                                    color: FintnessAppTheme.nearlyBlue,
                                   ),
                                 ),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
-                                left: 8,
-                                right: 8,
+                                left: 1,
+                                right: 1,
                               ),
                               child: Row(
                                 children: <Widget>[
@@ -326,7 +350,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                     padding: const EdgeInsets.only(right: 8),
                                     child: Icon(
                                       Icons.calendar_today,
-                                      color: FintnessAppTheme.grey,
+                                      color: FintnessAppTheme.nearlyBlue,
                                       size: 18,
                                     ),
                                   ),
@@ -338,7 +362,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                       fontWeight: FontWeight.normal,
                                       fontSize: 18,
                                       letterSpacing: -0.2,
-                                      color: FintnessAppTheme.darkerText,
+                                      color: FintnessAppTheme.nearlyBlue,
                                     ),
                                   ),
                                 ],
@@ -355,7 +379,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                 child: Center(
                                   child: Icon(
                                     Icons.keyboard_arrow_right,
-                                    color: FintnessAppTheme.grey,
+                                    color: FintnessAppTheme.nearlyBlue,
                                   ),
                                 ),
                               ),

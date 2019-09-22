@@ -25,11 +25,11 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
     tabIconsList.forEach((tab) {
       tab.isSelected = false;
     });
-    tabIconsList[0].isSelected = true;
+    //tabIconsList[0].isSelected = true;
 
     animationController =
         AnimationController(duration: Duration(milliseconds: 600), vsync: this);
-    tabBody = MyDiaryScreen(animationController: animationController);
+    tabBody = LandingScreen(animationController: animationController);
     super.initState();
   }
 
@@ -77,14 +77,22 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
         ),
         BottomBarView(
           tabIconsList: tabIconsList,
-          addClick: () {},
+          addClick: () {
+            animationController.reverse().then((data) {
+              if (!mounted) return;
+              setState(() {
+                tabBody =
+                    LandingScreen(animationController: animationController);
+              });
+            });
+          },
           changeIndex: (index) {
             if (index == 0 || index == 2) {
               animationController.reverse().then((data) {
                 if (!mounted) return;
                 setState(() {
                   tabBody =
-                      MyDiaryScreen(animationController: animationController);
+                      TrainingScreen(animationController: animationController);
                 });
               });
             } else if (index == 1 || index == 3) {

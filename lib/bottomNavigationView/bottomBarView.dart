@@ -39,7 +39,7 @@ class _BottomBarViewState extends State<BottomBarView>
             return new Transform(
               transform: new Matrix4.translationValues(0.0, 0.0, 0.0),
               child: new PhysicalShape(
-                color: FintnessAppTheme.white,
+                color: FintnessAppTheme.lightText,
                 elevation: 16.0,
                 clipper: TabClipper(
                     radius: Tween(begin: 0.0, end: 1.0)
@@ -138,7 +138,7 @@ class _BottomBarViewState extends State<BottomBarView>
                         color: FintnessAppTheme.nearlyDarkBlue,
                         gradient: LinearGradient(
                             colors: [
-                              FintnessAppTheme.nearlyDarkBlue,
+                              FintnessAppTheme.lightText,
                               HexColor("#6A88E5"),
                             ],
                             begin: Alignment.topLeft,
@@ -160,11 +160,16 @@ class _BottomBarViewState extends State<BottomBarView>
                           focusColor: Colors.transparent,
                           onTap: () {
                             widget.addClick();
+                            setState(() {
+                              widget.tabIconsList.forEach((tab) {
+                                tab.isSelected = false;
+                              });
+                            });
                           },
                           child: Icon(
-                            Icons.add,
+                            Icons.whatshot,
                             color: FintnessAppTheme.white,
-                            size: 32,
+                            size: 40,
                           ),
                         ),
                       ),
@@ -227,10 +232,8 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
       aspectRatio: 1,
       child: Center(
         child: InkWell(
-          splashColor: Colors.transparent,
-          focusColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-          hoverColor: Colors.transparent,
+
+
           onTap: () {
             if (!widget.tabIconData.isSelected) {
               setAnimation();

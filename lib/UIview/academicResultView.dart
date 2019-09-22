@@ -26,7 +26,7 @@ class AcademicResultView extends StatelessWidget {
                   left: 24, right: 24, top: 16, bottom: 18),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FintnessAppTheme.white,
+                  color: FintnessAppTheme.lightText,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(8.0),
                       bottomLeft: Radius.circular(8.0),
@@ -58,7 +58,7 @@ class AcademicResultView extends StatelessWidget {
                                       width: 100,
                                       height: 100,
                                       decoration: BoxDecoration(
-                                        color: FintnessAppTheme.white,
+                                        color: FintnessAppTheme.lightText,
                                         borderRadius: BorderRadius.all(
                                           Radius.circular(100.0),
                                         ),
@@ -84,7 +84,7 @@ class AcademicResultView extends StatelessWidget {
                                               fontSize: 24,
                                               letterSpacing: 0.0,
                                               color: FintnessAppTheme
-                                                  .nearlyDarkBlue,
+                                                  .spacer,
                                             ),
                                           ),
                                           Text(
@@ -96,7 +96,7 @@ class AcademicResultView extends StatelessWidget {
                                               fontWeight: FontWeight.bold,
                                               fontSize: 12,
                                               letterSpacing: 0.0,
-                                              color: FintnessAppTheme.grey
+                                              color: FintnessAppTheme.spacer
                                                   .withOpacity(0.5),
                                             ),
                                           ),
@@ -189,7 +189,7 @@ class AcademicResultView extends StatelessWidget {
                                       width: 100,
                                       height: 100,
                                       decoration: BoxDecoration(
-                                        color: FintnessAppTheme.white,
+                                        color: FintnessAppTheme.lightText,
                                         borderRadius: BorderRadius.all(
                                           Radius.circular(100.0),
                                         ),
@@ -215,7 +215,7 @@ class AcademicResultView extends StatelessWidget {
                                               fontSize: 24,
                                               letterSpacing: 0.0,
                                               color: FintnessAppTheme
-                                                  .nearlyDarkBlue,
+                                                  .spacer,
                                             ),
                                           ),
                                           Text(
@@ -227,7 +227,7 @@ class AcademicResultView extends StatelessWidget {
                                               fontWeight: FontWeight.bold,
                                               fontSize: 12,
                                               letterSpacing: 0.0,
-                                              color: FintnessAppTheme.grey
+                                              color: FintnessAppTheme.spacer
                                                   .withOpacity(0.5),
                                             ),
                                           ),

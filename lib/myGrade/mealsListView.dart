@@ -51,7 +51,7 @@ class _MealsListViewState extends State<MealsListView>
               width: double.infinity,
               child: ListView.builder(
                 padding: const EdgeInsets.only(
-                    top: 0, bottom: 0, right: 16, left: 16),
+                    top: 0, bottom: 0, right: 10, left: 10),
                 itemCount: mealsListData.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
@@ -169,60 +169,6 @@ class MealsView extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            mealsListData.kacl != 0
-                                ? Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: <Widget>[
-                                      Text(
-                                        mealsListData.kacl.toString(),
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: FintnessAppTheme.fontName,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 24,
-                                          letterSpacing: 0.2,
-                                          color: FintnessAppTheme.white,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 4, bottom: 3),
-                                        child: Text(
-                                          'kcal',
-                                          style: TextStyle(
-                                            fontFamily:
-                                                FintnessAppTheme.fontName,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                            letterSpacing: 0.2,
-                                            color: FintnessAppTheme.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                : Container(
-                                    decoration: BoxDecoration(
-                                      color: FintnessAppTheme.nearlyWhite,
-                                      shape: BoxShape.circle,
-                                      boxShadow: <BoxShadow>[
-                                        BoxShadow(
-                                            color: FintnessAppTheme.nearlyBlack
-                                                .withOpacity(0.4),
-                                            offset: Offset(8.0, 8.0),
-                                            blurRadius: 8.0),
-                                      ],
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(6.0),
-                                      child: Icon(
-                                        Icons.add,
-                                        color: HexColor(mealsListData.endColor),
-                                        size: 24,
-                                      ),
-                                    ),
-                                  ),
                           ],
                         ),
                       ),
@@ -244,8 +190,8 @@ class MealsView extends StatelessWidget {
                     top: 0,
                     left: 8,
                     child: SizedBox(
-                      width: 80,
-                      height: 80,
+                      width: 60,
+                      height: 60,
                       child: Image.asset(mealsListData.imagePath),
                     ),
                   )
